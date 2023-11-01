@@ -1,16 +1,31 @@
 package exercises.ex2arrays;
 
+import java.lang.reflect.Array;
+import java.util.Scanner;
+
+import static java.lang.System.in;
+import static java.lang.System.out;
+
 public class Arrays {
+
+    public static final Scanner input = new Scanner(in);
 
     /* The input functions */
     public static int[] getArrayOfIntsFromUser() {
-        // TODO
-        return new int[5];
+
+        out.println("Input 5 integers (space between, then enter) > ");
+        String user_input = input.nextLine();
+        String[] int_input = user_input.split(" ");
+        int[] int_array = new int[int_input.length];
+        for (int i = 0; i < int_input.length; i++) {
+            int_array[i] = Integer.parseInt(int_input[i]);
+        }
+        return int_array;
     }
 
     public static int getValueFromUser() {
-        // TODO
-        return 0;
+        out.println("Input a value to find > ");
+        return input.nextInt();
     }
 
     /* The output functions */
@@ -30,7 +45,13 @@ public class Arrays {
     /* The Algorithm */
     public static int findIndexOfValue(int[] a_list, int a_value) {
         // TODO
-        return 0;
+        int index = -1;
+        for (int i : a_list) {
+            if (i == a_value) {
+                index = i;
+            }
+        }
+        return index;
     }
 
     /* The top-level behavior */

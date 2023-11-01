@@ -14,18 +14,17 @@ public class SphereArea {
 
     public static float inputRadius() {
         out.println("Give me a radius please > ");
-        theRadius = input.nextFloat();
-        return theRadius;
+        return input.nextFloat();
     }
 
-    public static void printAreaResult(theArea) {
+    public static void printAreaResult(float theArea) {
         out.println("This is the area: " + theArea);
     }
 
     private static void calculateSphereAreaProgram() {
         // TODO implement program here
-        theRadius = inputRadius();
-        theArea = calculateArea(theRadius);
+        float theRadius = inputRadius();
+        float theArea = calculateArea(theRadius);
         printAreaResult(theArea);
 
     }
